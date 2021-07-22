@@ -2,6 +2,7 @@ import json
 import os 
 import mysql.connector
 import datetime
+import pytz
 
 from influxdb_client import InfluxDBClient
 
@@ -83,7 +84,7 @@ def connectBdd():
 def isNotBook(nameSalle, start, end):
      #get data
     bdd = connectBdd()
-    date = datetime.datetime.now()
+    date = datetime.datetime.now(pytz.timezone('Europe/Paris'))
     date = date.strftime("%Y-%m-%d")
     mycursor = bdd.cursor(prepared=True)
     
@@ -110,8 +111,8 @@ def isNotBook(nameSalle, start, end):
     
 
 def getJson():
-    now = datetime.datetime.now()
-    date = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone('Europe/Paris'))
+    date = datetime.datetime.now(pytz.timezone('Europe/Paris'))
     date = now.strftime("%Y-%m-%d")
     actualHour = now.hour
     bdd = connectBdd()
@@ -170,7 +171,7 @@ def bookARoom(nameSalle, start, end, studentMail):
 
     if isNotBook(nameSalle, start, end):
 
-        now = datetime.datetime.now()
+        now = datetime.datetime.now(pytz.timezone('Europe/Paris'))
         date = now.strftime("%Y-%m-%d")
         
 
@@ -234,7 +235,7 @@ def getBookingDetailByRoomModel(room_id, rangeHour):
     bdd = connectBdd()
     intersectionTab2d = []
     bookingTab = {}
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone('Europe/Paris'))
     date = now.strftime("%Y-%m-%d")
 
     mycursor = bdd.cursor(prepared=True)
@@ -266,7 +267,7 @@ def getBookingDetailByRoomModel(room_id, rangeHour):
 
 def getBookingByEmailModel(email):
     bdd = connectBdd()
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone('Europe/Paris'))
     date = now.strftime("%Y-%m-%d")
     mycursor = bdd.cursor(prepared=True)
 
@@ -285,8 +286,8 @@ def getBookingByEmailModel(email):
     return allBooking
 
 def getInfoOfARoomBYIdRoom(idRoom):
-    now = datetime.datetime.now()
-    date = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone('Europe/Paris'))
+    date = datetime.datetime.now(pytz.timezone('Europe/Paris'))
     date = now.strftime("%Y-%m-%d")
     actualHour = now.hour
     bdd = connectBdd()
