@@ -1,13 +1,12 @@
 # iot_lumino_api
 
 ## documentation
-
-Pour lister les salle et voir lesquelles sont réservées à l'heure actuelle :
+pour lister les salle et voir lesquelles sont reserver a l'heure actuelle :
 
     method : get
 	    apiURL/getAllRoom
 
-Pour réserver une salle :
+pour reserver une salle :
 
     method : post
     params = {
@@ -18,28 +17,24 @@ Pour réserver une salle :
     }
 	    apiURL/bookaroom
 
-Pour voir les réservations d'une salle :
+pour voir les reservation d'une salle
 
     method : get
         
         apiUrl/getAllBookingFromARoom/<str:nameRoom>
-	
-Pour supprimer une réservation :
+
+
+pour sup un rerservation: 
 
     method : get
         
-        apiUrl/removeABooking/<string:idBooking>
+        apiUrl/removeABooking/<string:idBooking>'/<str:nameRoom>
 
-Pour avoir les plages horaires disponibles à la réservation pour une salle précise :
+
+pour checker en detail les plage horaire dispo 
 
     method : get
         
         apiUrl/getBookingByRoomId/<string:idRoom>'
-
-Pour avoir les informations d'une salle :
-   
-	method : get        
-        	apiUrl//getRoomInfoByIdRoom/<string:idRoom>'
-
 
 
