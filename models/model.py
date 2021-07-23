@@ -70,11 +70,11 @@ def range_overlapping(x, y):
 
 def connectBdd():
     config = {
-    'user': 'rklxk7ds9ab108ng',
-    'password': 'relrb6leomiux08k',
+    'user': 'o058bkh3pzkk71q7',
+    'password': 'hux8gm7wz4653q74',
     'port': 3306,
-    'host': 'c8u4r7fp8i8qaniw.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
-    'database': 'je3w8f0ftg7dcitn',
+    'host': 'pei17y9c5bpuh987.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+    'database': 'cgbgyq588xdhev29',
     }
 
     cnx = mysql.connector.connect(**config)
